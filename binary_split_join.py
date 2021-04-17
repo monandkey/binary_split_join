@@ -61,95 +61,23 @@ if __name__=='__main__':
             splitinstance.splitBinary()
             splitinstance.displayResult()
 
-    # 対象ファイルが存在しない場合
     except FileNotFoundError:
+        error.displayFileNotFoundError(args_value[1])
 
-        print("")
-        print("============================================================")
-        print(" Warning!!")
-        print("------------------------------------------------------------")
-        print(" Type    : FileNotFoundError")
-        print("------------------------------------------------------------")
-        print(" Message : The specified file does not exist.")
-        print("")
-        print("           Can't find {}.".format(args_value[1]))
-        print("============================================================")
-        print("")
-
-    # 引数が整数以外の場合
     except ValueError:
+        error.displayValueError(args_value[2])
 
-        print("")
-        print("============================================================")
-        print(" Warning!!")
-        print("------------------------------------------------------------")
-        print(" Type    : ValueError")
-        print("------------------------------------------------------------")
-        print(" Message : There is a file with the same name.")
-        print("")
-        print("           Move {} and try again.".format(args_value[2]))
-        print("============================================================")
-        print("")
-
-    # 分割されたファイルが存在しない場合
     except SplitFileNotExist:
+        error.displaySplitFileNotExist()
 
-        print("")
-        print("============================================================")
-        print(" Warning!!")
-        print("------------------------------------------------------------")
-        print(" Type    : SplitFileNotExist")
-        print("------------------------------------------------------------")
-        print(" Message : The split file does not exist.")
-        print("")
-        print("           Make sure there are no missing pieces.")
-        print("============================================================")
-        print("")
-
-    # 同名のファイルが存在する場合
     except FileExistsError:
+        error.displayFileExistsError(args_value[1])
 
-        print("")
-        print("============================================================")
-        print(" Warning!!")
-        print("------------------------------------------------------------")
-        print(" Type    : FileExistsError")
-        print("------------------------------------------------------------")
-        print(" Message : There is a file with the same name.")
-        print("")
-        print("           Move {} and try again.".format(file))
-        print("============================================================")
-        print("")
-
-    # 引数の指定が分割されたファイルより大きい場合
     except MaximumNumberError:
+        error.displayMaximumNumberError()
 
-        print("")
-        print("============================================================")
-        print(" Warning!!")
-        print("------------------------------------------------------------")
-        print(" Type    : MaximumNumberError")
-        print("------------------------------------------------------------")
-        print(" Message : The argument is large.")
-        print("")
-        print("           Check the number of files.")
-        print("============================================================")
-        print("")
-
-    # 引数の指定が分割されたファイルより少ない場合
     except MinimummNumberError:
-
-        print("")
-        print("============================================================")
-        print(" Warning!!")
-        print("------------------------------------------------------------")
-        print(" Type    : MinimummNumberError")
-        print("------------------------------------------------------------")
-        print(" Message : The argument is small.")
-        print("")
-        print("           Check the number of files.")
-        print("============================================================")
-        print("")
+        error.displayMinimummNumberError()
 
 # ============================================================================
 # EOF
