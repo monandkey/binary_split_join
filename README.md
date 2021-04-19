@@ -1,14 +1,10 @@
 ## Overview
 
----
-
 This tool allows you to split and merge files.
 
 <br>
 
 ## Example
-
----
 
 ### Split
 
@@ -26,6 +22,6 @@ Store the files you want to merge under `input`.
 $ python .\binary_split_join.py <filename> <number>
 ```
 
-### Note
+## Note
 
 Do not move or delete the `.gitkeep`.
