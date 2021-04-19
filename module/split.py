@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.6
 # -*- coding: utf-8 -*
 import os
+import re
 import hashlib
 
 class InitializationBinarySplit:
@@ -17,17 +18,19 @@ class InitializationBinarySplit:
 
 class BinarySplit(InitializationBinarySplit):
     filecontents = ''
+    outputpath = ''
 
     def __init__(self, file):
         self.filecontents = file
         InitializationBinarySplit.__init__(self, self.filecontents)
+        self.outputpath = '.\\output\\' + re.sub(r'.*input.', '', self.filecontents)
 
     def splitBinary(self):
         with open(self.filecontents, 'rb') as binary:
             for i in range(self.numberofdivisions):
                 readseize = self.lastlength if i == self.numberofdivisions -1 else self.size
                 date = binary.read(readseize)
-                with open(self.filecontents  + '.div' + str(i), 'wb') as output:
+                with open(self.outputpath + '.div' + str(i), 'wb') as output:
                     output.write(date)
     
     def getCheckSum(self):
@@ -50,7 +53,7 @@ class BinarySplit(InitializationBinarySplit):
         print("------------------------------------------------------------")
 
         for i in range(self.numberofdivisions):
-            print(" +++++ {}.frac{}".format(self.filecontents, i))
+            print(" +++++ {}.div{}".format(self.outputpath, i))
 
         print("============================================================")
         print("")

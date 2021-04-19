@@ -1,11 +1,8 @@
 #!/usr/bin/env python3.6
 # -*- coding: utf-8 -*
 
-# ////////////////////////////////////////////////////////////////////////// #
-#
-#  Class
-#
-# ////////////////////////////////////////////////////////////////////////// #
+import sys
+
 class MaximumNumberError(Exception):
     pass
 
@@ -15,11 +12,6 @@ class MinimummNumberError(Exception):
 class SplitFileNotExist(Exception):
     pass
 
-# ////////////////////////////////////////////////////////////////////////// #
-#
-#  Function
-#
-# ////////////////////////////////////////////////////////////////////////// #
 def displayFileExistsError(filename):
 
     print("")
@@ -33,6 +25,7 @@ def displayFileExistsError(filename):
     print("           Move {} and try again.".format(filename))
     print("============================================================")
     print("")
+    sys.exit()
 
 def displayMaximumNumberError():
 
@@ -47,6 +40,7 @@ def displayMaximumNumberError():
     print("           Check the number of files.")
     print("============================================================")
     print("")
+    sys.exit()
 
 def displayMinimummNumberError():
 
@@ -61,8 +55,9 @@ def displayMinimummNumberError():
     print("           Check the number of files.")
     print("============================================================")
     print("")
+    sys.exit()
 
-def displayFileNotFoundError(filename)
+def displayFileNotFoundError(filename):
 
     print("")
     print("============================================================")
@@ -75,6 +70,7 @@ def displayFileNotFoundError(filename)
     print("           Can't find {}.".format(filename))
     print("============================================================")
     print("")
+    sys.exit()
 
 def displayValueError(number):
 
@@ -89,6 +85,7 @@ def displayValueError(number):
     print("           Move {} and try again.".format(number))
     print("============================================================")
     print("")
+    sys.exit()
 
 def displaySplitFileNotExist():
 
@@ -103,6 +100,7 @@ def displaySplitFileNotExist():
     print("           Make sure there are no missing pieces.")
     print("============================================================")
     print("")
+    sys.exit()
 
 def raiseMaximumNumberError():
     raise MaximumNumberError()
