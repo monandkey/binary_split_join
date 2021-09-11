@@ -25,3 +25,19 @@ $ python .\binary_split_join.py <filename> <number>
 ## Note
 
 Do not move or delete the `.gitkeep`.
+
+## Feature
+
+```bash
+binary_split_join/
+├── binary_split_join.py
+├── imput
+├── output
+├── module
+│   ├── app.py
+│   ├── zip.py
+│   └── error.py
+└── log
+    ├── normal.log
+    └── error.log
+```
